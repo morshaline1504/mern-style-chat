@@ -1,6 +1,6 @@
 import React from 'react';
 
-// This component displays individual message items
+
 function MessageList({ msg, isOwnMessage, formatTime }) {
   return (
     <div className={`message ${isOwnMessage ? 'own-message' : ''}`}>
