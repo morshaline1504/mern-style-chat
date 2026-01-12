@@ -13,7 +13,7 @@ body {
   background: #f0f2f5;
 }
 
-/* Login Screen */
+
 .login-container {
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Notifications */
+
 .notifications {
   position: fixed;
   top: 20px;
@@ -98,7 +98,7 @@ body {
   }
 }
 
-/* Main App Container */
+
 .app-container {
   height: 100vh;
   display: flex;
@@ -116,7 +116,7 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 280px;
   background: #f8f9fa;
@@ -154,7 +154,7 @@ body {
   display: inline-block;
 }
 
-/* Main Chat Area */
+
 .main-chat {
   flex: 1;
   display: flex;
@@ -179,7 +179,7 @@ body {
   opacity: 0.9;
 }
 
-/* Messages Container */
+
 .messages-container {
   flex: 1;
   overflow-y: auto;
@@ -232,7 +232,7 @@ body {
   color: white;
 }
 
-/* Input Form */
+
 .input-form {
   display: flex;
   gap: 10px;
@@ -270,7 +270,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Scrollbar styling */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -288,7 +288,7 @@ body {
   background: #555;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .sidebar {
     display: none;
