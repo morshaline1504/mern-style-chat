@@ -20,13 +20,13 @@ const io = socketIO(server, {
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+
 connectDB();
 
-// Store active users
+
 let activeUsers = [];
 
-// API endpoint to get previous messages
+
 app.get('/api/messages', async (req, res) => {
   try {
     const messages = await Message.find().sort({ timestamp: 1 }).limit(50);
@@ -36,16 +36,16 @@ app.get('/api/messages', async (req, res) => {
   }
 });
 
-// Socket.io connection
+
 io.on('connection', (socket) => {
   console.log('New user connected:', socket.id);
 
-  // User joins
+
   socket.on('join', (username) => {
     socket.username = username;
     activeUsers.push({ id: socket.id, username });
 
-    // Notify everyone that user joined
+ 
     io.emit('userJoined', {
       username,
       userCount: activeUsers.length,
@@ -55,17 +55,17 @@ io.on('connection', (socket) => {
     console.log(`${username} joined the chat`);
   });
 
-  // Handle incoming message
+
   socket.on('sendMessage', async (data) => {
     try {
-      // Save message to database
+      
       const newMessage = new Message({
         username: data.username,
         message: data.message
       });
       await newMessage.save();
 
-      // Broadcast message to all connected clients
+      
       io.emit('receiveMessage', {
         username: data.username,
         message: data.message,
@@ -76,14 +76,14 @@ io.on('connection', (socket) => {
     }
   });
 
-  // User disconnects
+
   socket.on('disconnect', () => {
     const user = activeUsers.find(u => u.id === socket.id);
 
     if (user) {
       activeUsers = activeUsers.filter(u => u.id !== socket.id);
 
-      // Notify everyone that user left
+     
       io.emit('userLeft', {
         username: user.username,
         userCount: activeUsers.length,
