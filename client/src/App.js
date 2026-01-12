@@ -17,24 +17,24 @@ function App() {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    // Load previous messages when app starts
+    
     fetch('http://localhost:5001/api/messages')
       .then(res => res.json())
       .then(data => setMessages(data))
       .catch(err => console.error('Error loading messages:', err));
 
-    // Listen for incoming messages
+    
     socket.on('receiveMessage', (data) => {
       setMessages(prev => [...prev, data]);
     });
 
-    // User joined notification
+   
     socket.on('userJoined', (data) => {
       setOnlineUsers(data.users);
       addNotification(`${data.username} joined the chat`);
     });
 
-    // User left notification
+    
     socket.on('userLeft', (data) => {
       setOnlineUsers(data.users);
       addNotification(`${data.username} left the chat`);
@@ -48,7 +48,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Auto scroll to bottom when new message comes
+    
     scrollToBottom();
   }, [messages]);
 
@@ -60,7 +60,7 @@ function App() {
     const id = Date.now();
     setNotifications(prev => [...prev, { id, text }]);
 
-    // Remove notification after 3 seconds
+    
     setTimeout(() => {
       setNotifications(prev => prev.filter(n => n.id !== id));
     }, 3000);
@@ -93,7 +93,7 @@ function App() {
     });
   };
 
-  // Login screen
+  
   if (!isJoined) {
     return (
       <div className="login-container">
@@ -117,10 +117,10 @@ function App() {
     );
   }
 
-  // Chat screen
+ 
   return (
     <div className="app-container">
-      {/* Notifications */}
+      {}
       <div className="notifications">
         {notifications.map(notif => (
           <div key={notif.id} className="notification">
@@ -130,10 +130,10 @@ function App() {
       </div>
 
       <div className="chat-container">
-        {/* Sidebar */}
+        {}
         <UserList users={onlineUsers} />
 
-        {/* Main chat area */}
+        {}
         <div className="main-chat">
           <div className="chat-header">
             <h2>Group Chat</h2>
