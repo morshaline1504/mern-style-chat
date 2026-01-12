@@ -14,8 +14,8 @@ A simple realtime chat application built with React, Node.js, Socket.io, and Mon
 
 **Frontend:**
 - React.js
-- Socket.io-client
-- CSS3
+
+- CSS
 
 **Backend:**
 - Node.js
