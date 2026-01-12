@@ -123,16 +123,7 @@ npm install socket.io-client
 
 4. **Open multiple browser tabs** at `http://localhost:3000` to test multi-user chat
 
-## Features Implemented
 
-✅ Real-time messaging with WebSocket  
-✅ Multiple users can chat simultaneously  
-✅ Join/leave notifications  
-✅ Online users list  
-✅ Messages saved to MongoDB  
-✅ Previous messages loaded on join  
-✅ Responsive design  
-✅ Clean and simple UI  
 
 ## Notes
 
