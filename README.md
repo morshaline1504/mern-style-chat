@@ -141,6 +141,4 @@ npm install socket.io-client
 - Message reactions
 - Better error handling
 
----
 
-Feel free to modify and enhance as needed!
